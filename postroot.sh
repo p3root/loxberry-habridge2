@@ -59,5 +59,12 @@ echo "<INFO> Plugin CONFIG folder is: $PCONFIG"
 echo "<INFO> Plugin SBIN folder is: $PSBIN"
 echo "<INFO> Plugin BIN folder is: $PBIN"
 
+
+
+echo "Disabling the loxberry ssdpd service"
+cp "$PDATA/ssdpd" "/opt/loxberry/sbin/ssdpd"
+chown root:root /opt/loxberry/sbin/ssdpd
+
+
 # Exit with Status 0
 exit 0

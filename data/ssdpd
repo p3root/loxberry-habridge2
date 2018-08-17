@@ -1,0 +1,36 @@
+INFO    09/05/18 13:07:31.402    Plugin.CorePlugin    	Module ready.    0
+INFO    09/05/18 13:07:31.402    Plugin.CorePlugin    	Module ready.    0
+INFO    09/05/18 13:07:31.480    CorePlugin    			Trying to establish database connection ... (Data Source=.\NETX_SERVER_SQL,User ID=sa,MultipleActiveResultSets=True,Connect Timeout=300,ConnectRetryCount=1)    
+WARN    09/05/18 13:07:33.668    CorePlugin    			SQL command failed. Command is not queued: 
+                IF OBJECT_ID (N'NETX_ALARM_LOGS', N'U') IS NULL 
+ CREATE TABLE dbo.NETX_ALARM_LOGS
+ (
+                    LOGID bigint IDENTITY(1,1) PRIMARY KEY NOT NULL,
+ WID bigint NOT NULL,
+                    DATE datetime NOT NULL,
+ ALARM_STATE int NOT NULL,
+                    IN_STATE int NOT NULL,
+                    ALARM_REASON int NOT NULL,
+                    COMMENT nvarchar(1024) NOT NULL,
+                    USERNAME nvarchar(1024) NOT NULL,
+                    SOURCE nvarchar(1024) NOT NULL,
+                    ITEM_HANDLE bigint NOT NULL,
+                    VALUE_TYPE int NOT NULL,
+                    NUM_VALUE float NULL,
+                    STR_VALUE nvarchar(max) NULL,
+                    INPUT_REASON int NOT NULL
+ ). Error: System.Data.SqlClient.SqlException (0x80131904): There is already an object named 'NETX_ALARM_LOGS' in the database.
+   at System.Data.SqlClient.SqlConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.SqlInternalConnection.OnError(SqlException exception, Boolean breakConnection, Action`1 wrapCloseInAction)
+   at System.Data.SqlClient.TdsParser.ThrowExceptionAndWarning(TdsParserStateObject stateObj, Boolean callerHasConnectionLock, Boolean asyncClose)
+   at System.Data.SqlClient.TdsParser.TryRun(RunBehavior runBehavior, SqlCommand cmdHandler, SqlDataReader dataStream, BulkCopySimpleResultSet bulkCopyHandler, TdsParserStateObject stateObj, Boolean& dataReady)
+   at System.Data.SqlClient.SqlCommand.RunExecuteNonQueryTds(String methodName, Boolean async, Int32 timeout, Boolean asyncWrite)
+   at System.Data.SqlClient.SqlCommand.InternalExecuteNonQuery(TaskCompletionSource`1 completion, String methodName, Boolean sendToPipe, Int32 timeout, Boolean& usedCache, Boolean asyncWrite, Boolean inRetry)
+   at System.Data.SqlClient.SqlCommand.ExecuteNonQuery()
+   at nxa.XDB.ClientModule.Connection.XdbClientModule.ExecuteNonQuery(String query, Boolean queueOnFailed)
+ClientConnectionId:56d3037e-3640-4c3d-be08-157f8a4972ff
+Error Number:2714,State:6,Class:16    0
+WARN    09/05/18 13:07:33.668    Plugin.CorePlugin    	Could not establish database connection (Data Source=.\NETX_SERVER_SQL,User ID=sa,MultipleActiveResultSets=True,Connect Timeout=300,ConnectRetryCount=1).    0
+INFO    09/05/18 13:07:41.413    CorePlugin    			Trying to establish database connection ... (Data Source=.\NETX_SERVER_SQL,User ID=sa,MultipleActiveResultSets=True,Connect Timeout=300,ConnectRetryCount=1)    0
+INFO    09/05/18 13:07:41.491    CorePlugin    			Database connection established successfully.    0
+INFO    09/05/18 13:07:48.913        ComClient connected    0 

@@ -56,3 +56,8 @@ echo "<INFO> Plugin Template folder is: $PTEMPL"
 echo "<INFO> Plugin Data folder is: $PDATA"
 echo "<INFO> Plugin Log folder (on RAMDISK!) is: $PLOG"
 echo "<INFO> Plugin CONFIG folder is: $PCONFIG"
+
+
+echo "Disabling the loxberry ssdpd service"
+cp $TEMPDIR\data\ssdpd /opt/loxberry/sbin/ssdpd
+chown root:root /opt/loxberry/sbin/ssdpd

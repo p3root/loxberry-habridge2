@@ -62,6 +62,7 @@ echo "<INFO> Plugin BIN folder is: $PBIN"
 
 
 echo "Disabling the loxberry ssdpd service"
+mv "/opt/loxberry/sbin/ssdpd" "/opt/loxberry/sbin/ssdpd_bak"
 cp "$PDATA/ssdpd" "/opt/loxberry/sbin/ssdpd"
 chown root:root /opt/loxberry/sbin/ssdpd
 

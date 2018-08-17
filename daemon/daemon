@@ -13,7 +13,7 @@
 if [ -x /usr/bin/logger ]
 then
     /usr/bin/logger "Starting HABridge"
-	/opt/loxberry/data/plugins/p3_lox_habridge2/habridge start
+	/usr/bin/java -jar -Dserver.port=8080 -Dconfig.file=/opt/loxberry/data/plugins/p3_lox_habridge2/habridge.config /opt/loxberry/data/plugins/p3_lox_habridge2/habridge.jar
 fi
 
 exit 0

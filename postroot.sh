@@ -66,6 +66,7 @@ mv "/opt/loxberry/sbin/ssdpd" "/opt/loxberry/sbin/ssdpd_bak"
 cp "$PDATA/ssdpd" "/opt/loxberry/sbin/ssdpd"
 chown root:root /opt/loxberry/sbin/ssdpd
 chmod 755 /opt/loxberry/sbin/ssdpd
+chmod 755 $PDATA/run_habridge
 
 
 # Exit with Status 0
